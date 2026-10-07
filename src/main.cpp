@@ -1,18 +1,30 @@
 #include <Arduino.h>
+#include "led.h"
 
-// put function declarations here:
-int myFunction(int, int);
+Led ledVermelho(5);
+Led ledAmarelo(7);
+Led ledVerde(16);
+Led ledBranco(18);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+void setup()
+{
+  ledVermelho.iniciar();
+  ledVermelho.ativarPiscar();
+
+  ledAmarelo.iniciar();
+  ledAmarelo.ativarPiscar();
+
+  ledVerde.iniciar();
+  ledVerde.ativarPiscar();
+
+  ledBranco.iniciar();
+  ledBranco.ativarPiscar();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+  ledVermelho.atualizar();
+  ledAmarelo.atualizar();
+  ledVerde.atualizar();
+  ledBranco.atualizar();
 }
